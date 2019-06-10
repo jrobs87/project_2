@@ -10,6 +10,7 @@ CREATE TABLE dogs
     yard BOOLEAN DEFAULT true,
     other_dogs BOOLEAN DEFAULT true,
     kids BOOLEAN DEFAULT true,
+    size VARCHAR(6) NOT NULL,
     PRIMARY KEY (dog_id)
 );
 

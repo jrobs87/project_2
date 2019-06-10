@@ -5,11 +5,21 @@
 -- Template for adding a new person with a dog interest
 -- INSERT INTO humans (name, password, dog_match_1) VALUES ('', '', int);
 
-INSERT INTO dogs (dog_name, yard, other_dogs, kids) VALUES ('Bayley', true, true, true);
-INSERT INTO dogs (dog_name, yard, other_dogs, kids) VALUES ('Emmett', false, false, false);
-INSERT INTO dogs (dog_name, yard, other_dogs, kids) VALUES ('Spot', true, true, true);
-INSERT INTO dogs (dog_name, yard, other_dogs, kids) VALUES ('Lassie', false, false, false);
-INSERT INTO dogs (dog_name, yard, other_dogs, kids) VALUES ('StanMan', true, true, true);
+INSERT INTO dogs (dog_name, yard, other_dogs, kids, size) VALUES ('Bayley', true, true, true, 'medium');
+INSERT INTO dogs (dog_name, yard, other_dogs, kids, size) VALUES ('Emmett', false, false, true, 'large');
+INSERT INTO dogs (dog_name, yard, other_dogs, kids, size) VALUES ('Spot', true, true, true, 'small');
+INSERT INTO dogs (dog_name, yard, other_dogs, kids, size) VALUES ('Lassie', false, false, false, 'small');
+INSERT INTO dogs (dog_name, yard, other_dogs, kids, size) VALUES ('StanMan', true, true, true, 'medium');
+INSERT INTO dogs (dog_name, yard, other_dogs, kids, size) VALUES ('Stephen', true, true, true, 'medium');
+INSERT INTO dogs (dog_name, yard, other_dogs, kids, size) VALUES ('Twinkle', false, false, true, 'large');
+INSERT INTO dogs (dog_name, yard, other_dogs, kids, size) VALUES ('Tough', true, true, true, 'small');
+INSERT INTO dogs (dog_name, yard, other_dogs, kids, size) VALUES ('Dakota', false, false, false, 'small');
+INSERT INTO dogs (dog_name, yard, other_dogs, kids, size) VALUES ('Ariel', true, true, true, 'medium');
+INSERT INTO dogs (dog_name, yard, other_dogs, kids, size) VALUES ('Bark', true, true, true, 'medium');
+INSERT INTO dogs (dog_name, yard, other_dogs, kids, size) VALUES ('Max', false, false, true, 'large');
+INSERT INTO dogs (dog_name, yard, other_dogs, kids, size) VALUES ('Crosby', true, true, true, 'small');
+INSERT INTO dogs (dog_name, yard, other_dogs, kids, size) VALUES ('Matcha', false, false, false, 'small');
+INSERT INTO dogs (dog_name, yard, other_dogs, kids, size) VALUES ('Derek', true, true, true, 'medium');
 
 INSERT INTO human_prefs (yard, other_dogs, kids, small, medium, large) VALUES (false, false, true, false, true, true);
 INSERT INTO human_prefs (yard, other_dogs, kids, small, medium, large) VALUES (true, true, true, true, true, true);
