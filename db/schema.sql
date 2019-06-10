@@ -1,4 +1,4 @@
--- DROP DATABASE [IF EXISTS] pawnder_db;
+DROP DATABASE IF EXISTS pawnder_db;
 CREATE DATABASE pawnder_db;
 USE pawnder_db;
 
@@ -11,6 +11,20 @@ CREATE TABLE dogs
     other_dogs BOOLEAN DEFAULT true,
     kids BOOLEAN DEFAULT true,
     PRIMARY KEY (dog_id)
+);
+
+
+DROP TABLE IF EXISTS human_prefs;
+CREATE TABLE human_prefs
+(
+    prefs_id INT NOT NULL AUTO_INCREMENT,
+    yard BOOLEAN DEFAULT true,
+    other_dogs BOOLEAN DEFAULT true,
+    kids BOOLEAN DEFAULT true,
+    small BOOLEAN DEFAULT true,
+    medium BOOLEAN DEFAULT true,
+    large BOOLEAN DEFAULT true,
+    PRIMARY KEY (prefs_id)
 );
 
 DROP TABLE IF EXISTS humans;
@@ -32,14 +46,4 @@ CREATE TABLE humans
     FOREIGN KEY (dog_match_4) REFERENCES dogs(dog_id),
     FOREIGN KEY (dog_match_5) REFERENCES dogs(dog_id),
     FOREIGN KEY (prefs) REFERENCES human_prefs(prefs_id)
-);
-
-DROP TABLE IF EXISTS human_prefs;
-CREATE TABLE human_prefs
-(
-    prefs_id INT NOT NULL AUTO_INCREMENT,
-    yard BOOLEAN DEFAULT true,
-    other_dogs BOOLEAN DEFAULT true,
-    kids BOOLEAN DEFAULT true,
-    PRIMARY KEY (prefs_id)
 );
