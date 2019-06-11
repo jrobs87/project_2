@@ -21,18 +21,24 @@ INSERT INTO dogs (dog_name, yard, other_dogs, kids, size) VALUES ('Crosby', true
 INSERT INTO dogs (dog_name, yard, other_dogs, kids, size) VALUES ('Matcha', false, false, false, 'small');
 INSERT INTO dogs (dog_name, yard, other_dogs, kids, size) VALUES ('Derek', true, true, true, 'medium');
 
-INSERT INTO human_prefs (yard, other_dogs, kids, small, medium, large) VALUES (false, false, true, false, true, true);
-INSERT INTO human_prefs (yard, other_dogs, kids, small, medium, large) VALUES (true, true, true, true, true, true);
-INSERT INTO human_prefs (yard, other_dogs, kids, small, medium, large) VALUES (false, false, false, true, false, false);
-INSERT INTO human_prefs (yard, other_dogs, kids, small, medium, large) VALUES (true, false, true, false, true, false);
-INSERT INTO human_prefs (yard, other_dogs, kids, small, medium, large) VALUES (true, false, false, false, false, true);
+-- INSERT INTO human_prefs (yard, other_dogs, kids, small, medium, large) VALUES (false, false, true, false, true, true);
+-- INSERT INTO human_prefs (yard, other_dogs, kids, small, medium, large) VALUES (true, true, true, true, true, true);
+-- INSERT INTO human_prefs (yard, other_dogs, kids, small, medium, large) VALUES (false, false, false, true, false, false);
+-- INSERT INTO human_prefs (yard, other_dogs, kids, small, medium, large) VALUES (true, false, true, false, true, false);
+-- INSERT INTO human_prefs (yard, other_dogs, kids, small, medium, large) VALUES (true, false, false, false, false, true);
 
-INSERT INTO humans (name, password, prefs) VALUES ('John', 'blink182', 1);
-INSERT INTO humans (name, password, prefs) VALUES ('Marshall', 'drink!c0ff33!', 2);
-INSERT INTO humans (name, password, prefs) VALUES ('Chaney', 'd0g54lyf3', 3);
-INSERT INTO humans (name, password, prefs) VALUES ('David', 'cod3r', 4);
-INSERT INTO humans (name, password, prefs) VALUES ('Stanley', 'ipromiseim18', 5);
+INSERT INTO humans (name, password) VALUES ('John', 'blink182');
+INSERT INTO humans (name, password) VALUES ('Marshall', 'drink!c0ff33!');
+INSERT INTO humans (name, password) VALUES ('Chaney', 'd0g54lyf3');
+INSERT INTO humans (name, password) VALUES ('David', 'cod3r');
+INSERT INTO humans (name, password) VALUES ('Stanley', 'ipromiseim18');
+
+INSERT INTO matches (human_id, dog_id) VALUES (1, 2);
+INSERT INTO matches (human_id, dog_id) VALUES (2, 14);
+INSERT INTO matches (human_id, dog_id) VALUES (3, 5);
+INSERT INTO matches (human_id, dog_id) VALUES (4, 7);
+INSERT INTO matches (human_id, dog_id) VALUES (5, 11);
 
 SELECT * FROM dogs;
-SELECT * FROM human_prefs;
 SELECT * FROM humans;
+SELECT * FROM matches;
