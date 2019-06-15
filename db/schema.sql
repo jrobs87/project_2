@@ -20,23 +20,11 @@ CREATE TABLE dogs_stats
     female BOOLEAN NOT NULL,
     size VARCHAR(6) NOT NULL,
     profile_image VARCHAR(255) NOT NULL,
-    profile_url VARCHAR(255) NOT NULL
+    profile_url VARCHAR(255) NOT NULL,
+    FOREIGN KEY (FK_dog_id) REFERENCES dogs(dog_id)
+
 );
 
-
-DROP TABLE IF EXISTS human_prefs;
-CREATE TABLE human_prefs
-(
-    prefs_id INT NOT NULL AUTO_INCREMENT,
-    yard BOOLEAN DEFAULT true,
-    other_pets BOOLEAN DEFAULT false,
-    kids BOOLEAN DEFAULT true,
-    female BOOLEAN ,
-    small BOOLEAN DEFAULT true,
-    medium BOOLEAN DEFAULT true,
-    large BOOLEAN DEFAULT true,
-    PRIMARY KEY (prefs_id)
-);
 
 DROP TABLE IF EXISTS humans;
 CREATE TABLE humans
@@ -45,6 +33,23 @@ CREATE TABLE humans
     name varchar(255) NOT NULL,
     password varchar(255) NOT NULL,
     PRIMARY KEY (id)
+);
+
+DROP TABLE IF EXISTS human_prefs;
+CREATE TABLE human_prefs
+(
+    prefs_id INT NOT NULL AUTO_INCREMENT,
+    FK_human_id INT NOT NULL,
+    yard BOOLEAN DEFAULT true,
+    other_pets BOOLEAN DEFAULT false,
+    kids BOOLEAN DEFAULT true,
+    female BOOLEAN ,
+    small BOOLEAN DEFAULT true,
+    medium BOOLEAN DEFAULT true,
+    large BOOLEAN DEFAULT true,
+    PRIMARY KEY (prefs_id),
+    FOREIGN KEY (FK_human_id) REFERENCES humans(id)
+
 );
 
 DROP TABLE IF EXISTS matches;
