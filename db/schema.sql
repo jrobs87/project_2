@@ -17,10 +17,12 @@ CREATE TABLE dogs_stats
     yard BOOLEAN DEFAULT true,
     other_pets BOOLEAN DEFAULT true,
     kids BOOLEAN DEFAULT true,
+    size int NOT NULL,
     female BOOLEAN NOT NULL,
-    size VARCHAR(6) NOT NULL,
     profile_image VARCHAR(255) NOT NULL,
     profile_url VARCHAR(255) NOT NULL
+    PRIMARY KEY (dog_id)
+
 );
 
 
