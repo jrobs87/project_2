@@ -10,15 +10,6 @@ CREATE TABLE dogs
     PRIMARY KEY (dog_id)
 );
 
-DROP TABLE IF EXISTS dogs_links;
-CREATE TABLE dogs_links
-(
-    dogs_links_id INT(4) AUTO_INCREMENT,
-    profile_url VARCHAR(255) NOT NULL,
-    profile_image VARCHAR(255) NOT NULL,
-    PRIMARY KEY (dogs_links_id)
-);
-
 DROP TABLE IF EXISTS dogs_stats;
 CREATE TABLE dogs_stats
 (
@@ -28,11 +19,8 @@ CREATE TABLE dogs_stats
     kids BOOLEAN DEFAULT true,
     female BOOLEAN NOT NULL,
     size VARCHAR(6) NOT NULL,
-    
-    FK_dogs_links_id INT NOT NULL,
-
-    FOREIGN KEY (FK_dog_id) REFERENCES dogs(dog_id),
-    FOREIGN KEY (FK_dogs_links_id) REFERENCES dogs_links(dogs_links_id)
+    profile_image VARCHAR(255) NOT NULL,
+    profile_url VARCHAR(255) NOT NULL
 );
 
 
