@@ -1,4 +1,10 @@
 
+-- -- Template for adding dogs to a persons interests
+-- -- update humans set dog_match_1=1 WHERE id = 1;
+
+-- -- Template for adding a new person with a dog interest
+-- -- INSERT INTO humans (name, password, dog_match_1) VALUES ('', '', int);
+
 insert into dogs(dog_name)
 values("Dawson"),
       ("Caroline"),
@@ -66,3 +72,22 @@ values(1, false, true, false, false, 1, "https://dl5zpyw5k3jeb.cloudfront.net/ph
       (30, true, false, true, true, 1, "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/29714557/1/?bust=1499649247&width=720", "https://www.petfinder.com/dog/clementine-29714557/ga/macon/all-about-animals-rescue-ga345/"),
       (31, true, true, false, true, 1, "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/25045547/6/?bust=1540836329&width=720", "https://www.petfinder.com/dog/raisen-25045547/ga/macon/all-about-animals-rescue-ga345/"),
       (32, false, true, false, false, 1, "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/23384593/1/?bust=1461749350&width=720", "https://www.petfinder.com/dog/hendrix-23384593/ga/macon/all-about-animals-rescue-ga345/");
+
+
+INSERT INTO humans (name, password) VALUES ('John', 'blink182');
+INSERT INTO humans (name, password) VALUES ('Marshall', 'drink!c0ff33!');
+INSERT INTO humans (name, password) VALUES ('Chaney', 'd0g54lyf3');
+INSERT INTO humans (name, password) VALUES ('David', 'cod3r');
+INSERT INTO humans (name, password) VALUES ('Stanley', 'ipromiseim18');
+
+INSERT INTO matches (FK_human_id, FK_dog_id) VALUES (1, 2);
+INSERT INTO matches (FK_human_id, FK_dog_id) VALUES (2, 1);
+INSERT INTO matches (FK_human_id, FK_dog_id) VALUES (3, 5);
+INSERT INTO matches (FK_human_id, FK_dog_id) VALUES (4, 4);
+INSERT INTO matches (FK_human_id, FK_dog_id) VALUES (5, 3);
+
+      SELECT * FROM humans;
+SELECT * FROM human_prefs;
+SELECT * FROM dogs;
+SELECT * FROM dogs_stats;
+SELECT * FROM matches;
