@@ -39,8 +39,6 @@ values("Dawson"),
       ("Raisen"),
       ("Hendrix");
 
-
-
 insert into dogs_stats(FK_dog_id, yard, other_pets, kids, female, size, profile_image, profile_url)
 values(1, false, true, false, false, 1, "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/43797500/1/?bust=1547742389&width=720", "https://www.petfinder.com/dog/dawson-43797500/ga/macon/all-about-animals-rescue-ga345/"),
       (2, true, true, false, true, 2, "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/43789666/1/?bust=1547743098&width=720", "https://www.petfinder.com/dog/caroline-43789666/ga/macon/all-about-animals-rescue-ga345/"),
