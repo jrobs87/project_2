@@ -1,2 +1,11 @@
 <h1>SWIPE THE DOGS!!!!</h1>
 <h3>Powered by Handlebars!</h3>
+<p>The most important things go here.</p>
+
+<ul>
+    {{#each .}}
+    {{#if dataValues.dog_name}}
+        <li>{{dataValues.dog_name}}</li>
+        {{/if}}
+    {{/each}}
+</ul>

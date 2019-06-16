@@ -24,7 +24,9 @@ module.exports = function (app) {
   // BEGIN SWIPE HTML ROUTE TESTING
   app.get("/swiper", function (req, res) {
     db.swipe.findAll({}).then(function (dbswipe) {
-      res.render('swipe');
+      hbsObject = dbswipe;
+      console.log(hbsObject);
+      res.render('swipe', hbsObject);
       console.log('----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ')
       console.log(`Swiper Page delivered to client with ${dbswipe.length} dog cards.`);
     });
