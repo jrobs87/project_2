@@ -4,11 +4,7 @@ var db = require("../models");
 module.exports = function(app) {
   // Get all dogs that match user parameters
   app.get("/api/dogs", function(req, res) {
-    db.Dog.findAll(
-      {
-        where: {size: 1}
-    }
-      ).then(function(Dogs) {
+    db.Dog.findAll({}).then(function(Dogs) {
       res.json(Dogs);
     });
   });

@@ -3,19 +3,18 @@ module.exports = function(sequelize, DataTypes) {
     FK_dog_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
       validate: {
         len: [1,255]
       },
-      
+      primaryKey: true,
     },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1, 50]
-      }
-    },
+    // name: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    //   validate: {
+    //     len: [1, 50]
+    //   }
+    // },
     yard: {
       type: DataTypes.BOOLEAN,
       allowNull: false,

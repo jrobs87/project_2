@@ -6,15 +6,19 @@ var axios = require("axios")
 module.exports = function (app) {
   // Load index page
   app.get("/", function (req, res) {
-    res.send("The Home Page");
+    res.sendFile(path.join(__dirname, "/../views/index.html"));
   });
 
   app.get("/login", function (req, res) {
-    res.send("The Login Page")
+    res.sendFile(path.join(__dirname, "/../views/register.html"))
   })
 
   app.get("/profile", function (req, res) {
     res.send("The User Profile Page")
+  })
+  
+  app.get("/survey", function(req, res) {
+    res.sendFile(path.join(__dirname, "/../views/survey.html"))
   })
 
   app.get("/swiper", function (req, res) {
@@ -55,5 +59,9 @@ module.exports = function (app) {
           console.log(response.data)
         })
      })
+  })
+
+  app.get("*", function(req,res) {
+    res.send("404")
   })
 }
