@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/styles/styles.css" type="text/css"/>
+    <title>Swipe Your Paws!</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+
 <h1>SWIPE THE DOGS!!!!</h1>
 <h3>Powered by Handlebars!</h3>
 <p>The most important things go here.</p>
@@ -5,7 +20,11 @@
 <ul>
     {{#each .}}
     {{#if dataValues.dog_name}}
-        <li>{{dataValues.dog_name}}</li>
+    <img src={{dataValues.dog_img}} alt="Oh heck!  Missing image!">
+        <li data-id={{dataValues.dog_id}}>
+            {{dataValues.dog_name}}
+            </li>
         {{/if}}
     {{/each}}
 </ul>
+
