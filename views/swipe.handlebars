@@ -43,28 +43,34 @@
 
 
     <div class="row">
-        <div class="actions">
-            <a href="" class="dislike">
-                <button class="btn">dislike</button>
-            </a>
-            <a href="" class="like">
-                <button class="btn">like</button>
-            </a>
+          <div class="col l3 m1"></div>
+        <div class="col l6 m10 l12">
+     <div class="actions">
+            <span class="dislike">
+                <a class="btn-floating btn-large waves-effect waves-light deep-purple lighten-1 white-text">Nope</a>
+            </span>
+            <span class="like">
+                <a class="btn-floating btn-large waves-effect waves-light deep-purple pulse white-text">Love</a>
+            </span>
         </div>
-    </div>
+        </div>
+         <div class="col l3 m1"></div>
+        </div>
 
 
     <!-- Modal Trigger -->
-    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+    <a class="waves-effect waves-light btn modal-trigger red" href="#modal1">Modal TEST</a>
 
     <!-- Modal Structure -->
     <div id="modal1" class="modal modal-fixed-footer">
         <div class="modal-content">
             <h4>My Matches</h4>
-            <p>We belong together like peanutbutter and Kongs.</p>
+            <div id="matches">
+                < matches here >
+            </div>
         </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Swipe Again</a>
+        <div class="modal-footer deep-purple darken-3">
+            <a href="#!" class="modal-close waves-effect waves-light btn-flat white-text">Swipe Again</a>
         </div>
     </div>
 

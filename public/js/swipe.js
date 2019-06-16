@@ -14,7 +14,7 @@ $(document).ready(function () {
     console.log("Swiper ready!");
 
     // set up the liked dogs array card counter
-    dogsLiked = []
+    let dogsLiked = []
 
     cardCount = document.getElementById("tinderList").childElementCount;
     console.log(`Card Stack loaded.  Total card count: ${cardCount}`);
@@ -33,7 +33,16 @@ $(document).ready(function () {
     }
 
     function dogsLikedAdd(id, name, img, url) {
+        let dogLikedAdd = {
+            dog_id: id,
+            dog_name: name,
+            dog_img: img,
+            dog_url: url
+        };
 
+        dogsLiked.push(dogLikedAdd);
+        console.log(dogsLiked);
+        console.log(dogLikedAdd)
     }
 
     $("#tinderslide").jTinder({
@@ -47,15 +56,14 @@ $(document).ready(function () {
             // console.log(`Disliked ${dogName} - ID ${dogID}`);
         },
         onLike: function (item) {
-            let dogID = item.data("dog-id");
-            let dogName = item.data("dog-name");
-            let dogImg = item.data("dog-img");
-            let dogURL = item.data("dog-url");
+            let dogID = item.data("id");
+            let dogName = item.data("name");
+            let dogIMG = item.data("img");
+            let dogURL = item.data("url");
 
-
+            dogsLikedAdd(dogID, dogName, dogIMG, dogURL);
             cardCounter();
-
-            dogsLiked.push(dogID);
+            console.log(dogID)
 
             // console.log('Like image ' + (item.index() + 1));
             // console.log(`Liked ${dogName} - ID ${dogID}`);
