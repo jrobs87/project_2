@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     // init Materialize js 
     $('.modal').modal(
-        {dismissible: false}
+        { dismissible: false }
     ); // modal for dog matches
 
     // // Modal Instance
@@ -81,4 +81,12 @@ $(document).ready(function () {
         e.preventDefault();
         $("#tinderslide").jTinder($(this).attr('class'));
     });
+
+    // Reload the swiper page from modal button
+    $('#swipeRestart').on('click', function () {
+        $('body').css('opacity', '0');
+        setTimeout(function () {
+            location.reload();
+        }, 600)
+    })
 });
