@@ -1,17 +1,26 @@
 var db = require("../models");
 
+
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+  // Get all dogs that match user parameters
+  app.get("/api/dogs", function(req, res) {
+    db.Dog.findAll(
+      {
+        where: {size: 1}
+    }
+      ).then(function(Dogs) {
+      res.json(Dogs);
     });
   });
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+  // Save a match
+  app.post("/api/dogs", function(req, res) {
+    var dbQuery = "INSERT INTO matches (?,?) VALUES (?,?)";
+
+    connection.query(dbQuery, [req.body, req.body], function(err, result) {
+      if (err) throw err;
+      console.log("Match saved...");
+      res.end();
     });
   });
 

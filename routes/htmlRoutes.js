@@ -40,12 +40,20 @@ module.exports = function (app) {
        var token = response.data.access_token
         axios({
           method: "GET",
-          url: "https://api.petfinder.com/v2/organizations?location="+userZip,
+          url: "https://api.petfinder.com/v2/organizations?location=georgia",
           headers: { "Authorization": "Bearer " + token },
         }).then(function (response) {
         var organs =response.data.organizations
         res.json(organs)
         });
+        axios({
+          method: "GET",
+          url: "https://api.petfinder.com/v2/animals/43797500",
+          headers: { "Authorization": "Bearer " + token },
+
+        }).then(function(response) {
+          console.log(response.data)
+        })
      })
   })
 }
