@@ -22,17 +22,18 @@ module.exports = function (app) {
     });
   });
 
-  // SWIPE TESTING ROUTE
-  app.get("/api/swipe", function (req, res) {
+  // SWIPER API ROUTE TESTING
+  app.get("/api/swiper", function (req, res) {
     db.swipe.findAll({}).then(function (dbswipe) {
       res.send(dbswipe);
-      // for (dbswipe)
-      console.log(dbswipe.length);
       
+      console.log('----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ')
+      console.log(`Dog Swiper API delivered with ${dbswipe.length} dog cards.  All matches below!`);
+
       for (i = 0; i < dbswipe.length; i++) {
-        console.log(dbswipe[i].dataValues.dog_img);
+        console.log('----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ')
+        console.log(dbswipe[i].dataValues)
       }
-      console.log(dbswipe[0].dataValues)
     });
   });
 

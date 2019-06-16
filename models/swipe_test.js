@@ -1,5 +1,3 @@
-
-
 module.exports = function (sequelize, DataTypes) {
     var Swipe = sequelize.define("swipe", {
         //   dog_id: DataTypes.INTEGER,
@@ -13,7 +11,7 @@ module.exports = function (sequelize, DataTypes) {
         dog_url: DataTypes.STRING,
     },
         {
-            timestamps: false
+            timestamps: false // removed timestamps - throws errors otherwise and not needed
         });
     return Swipe;
 };

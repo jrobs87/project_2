@@ -41,7 +41,7 @@ db.Sequelize = Sequelize;
 
 module.exports = db;
 
-// TEST CONNECTION TO DB - JOHN
+// Tests the Sequelize connection to the dB!
 sequelize
   .authenticate()
   .then(() => {
