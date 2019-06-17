@@ -17,9 +17,21 @@ module.exports = function (app) {
     res.send("The User Profile Page")
   })
 
+  // app.get("/swiper", function (req, res) {
+  //   res.send("The Dog Swiper Page")
+  // })
+
+  // BEGIN SWIPE HTML ROUTE TESTING
   app.get("/swiper", function (req, res) {
-    res.send("The Dog Swiper Page")
-  })
+    db.swipe.findAll({}).then(function (dbswipe) {
+      hbsObject = dbswipe;
+      console.log(hbsObject);
+      res.render('swipe', hbsObject);
+      console.log('----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ')
+      console.log(`Swiper Page delivered to client with ${dbswipe.length} dog cards.`);
+    });
+  });
+  // END SWIPE HTML ROUTE TESTING
 
   app.get("/results", function (req, res) {
     res.send("The results page")
