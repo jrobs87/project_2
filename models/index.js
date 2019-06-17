@@ -40,3 +40,16 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 module.exports = db;
+
+// Tests the Sequelize connection to the dB!
+ sequelize
+   .authenticate()
+   .then(() => {
+     console.log('----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ')
+     console.log(`Connection to the ${config.database} database has been established successfully.`);
+   })
+   .catch(err => {
+     console.log('----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ')
+     console.error(`Unable to connect to the ${config.database} database:`, err);
+   });
+
