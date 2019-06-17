@@ -17,11 +17,12 @@ module.exports = function (app) {
     res.send("The User Profile Page")
   })
 
-  // app.get("/swiper", function (req, res) {
-  //   res.send("The Dog Swiper Page")
-  // })
+  // Now using Handlebars for this
+  app.get("/survey", function (req, res) {
+    res.render('survey');
+  })
 
-  // BEGIN SWIPE HTML ROUTE TESTING
+  // Route to Swiper Page (Functioning!)
   app.get("/swiper", function (req, res) {
     db.swipe.findAll({}).then(function (dbswipe) {
       hbsObject = dbswipe;
@@ -31,16 +32,20 @@ module.exports = function (app) {
       console.log(`Swiper Page delivered to client with ${dbswipe.length} dog cards.`);
     });
   });
-  // END SWIPE HTML ROUTE TESTING
 
-  app.get("/results", function (req, res) {
-    res.send("The results page")
-  })
+  // JOHN - Using a modal instead for displaying results!
+  // app.get("/results", function (req, res) {
+  //   res.send("The results page")
+  // })
 
+  // API Routes to additional adoption orgs
   app.get("/organizations", function (req, res) {
-    res.sendFile(path.join(__dirname, "/../views/petfinder_organization.html"))
+    // res.sendFile(path.join(__dirname, "/../views/petfinder_organization.html")) // Original
+    res.render('organizations');
+
   })
 
+   // API Routes to additional adoption orgs
   app.post("/organizations", function (req, res) {
     var userZip = req.body.zipcode
     var token = keys
